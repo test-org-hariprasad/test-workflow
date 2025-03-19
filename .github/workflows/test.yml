@@ -1,0 +1,11 @@
+name: Test Run
+on:
+  workflow_dispatch:
+
+jobs:
+  job1:
+    runs-on: ubuntu
+    steps:
+      - uses: browser-actions/setup-chrome@v1
+      - run: chrome --version
+  
