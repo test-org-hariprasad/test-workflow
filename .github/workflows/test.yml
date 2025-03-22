@@ -6,7 +6,5 @@ jobs:
   job1:
     runs-on: ubuntu-latest
     steps:
-      - uses: bahmutov/npm-install@v1.8.15
-        with:
-          install-command: "ls -a"
+      - uses: actions-ecosystem/action-regex-match@v1.0.0
   
