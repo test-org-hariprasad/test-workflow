@@ -21,11 +21,13 @@ jobs:
             export IMAGE_TAG="test-image:v1-${BRANCH_NAME}"
           fi
           echo "IMAGE_TAG=${IMAGE_TAG}" >> $GITHUB_ENV
+          echo $BRANCH_NAME
+          echo $IMAGE_TAG
       - name: Build platform specific Docker image
         uses: docker/build-push-action@v6
         with:
           context: .
-          tags: ${env.IMAGE_TAG}-amd64
+          tags: ${{env.IMAGE_TAG}}-amd64
           push: false
           file: Dockerfile
       - name: List Docker images
